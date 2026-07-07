@@ -6,6 +6,8 @@ This document explains how each original column was reviewed and selected for th
 
 The source dataset comes from a health-commodity supply chain context. For this project, selected fields are reframed into an express logistics / courier service quality scenario for learning and portfolio purposes.
 
+Business-driven feature selection keeps the final dataset focused on fields that support service quality, delivery performance, cost visibility, and downstream reporting. Columns were retained only when they contributed to the analytics model or helped preserve important shipment context.
+
 ## Column Review
 
 | Original Column | Business Meaning | Courier Reframe | Keep? | Final Field Name | Reason / Dashboard Impact |
@@ -78,3 +80,33 @@ The final `Shipments` table will keep the following fields:
 - Removed columns are excluded because they are procurement-specific, health-product-specific, or not relevant to service quality analytics.
 - Weight and freight cost contain text placeholders, so numeric values will be converted while invalid placeholders remain null.
 - This project does not claim to use real DHL or courier operational data.
+
+## Phase 1 Result
+
+The original dataset with 35 columns was transformed into a business-ready `Shipments` table.
+
+Final schema:
+
+1. Shipment_ID
+2. Destination_Country
+3. Destination_Region
+4. Routing_Type
+5. Shipping_Term
+6. Service_Level
+7. Origin_Facility
+8. Cargo_Category
+9. Committed_Delivery_Date
+10. Actual_Delivery_Date
+11. POD_Confirmation_Date
+12. Quantity
+13. Declared_Value_USD
+14. Weight_KG
+15. Is_Weight_Captured
+16. Shipment_Cost_USD
+17. Is_Cost_Captured
+18. Insurance_USD
+19. Transit_Time_Actual_Days
+20. On_Time_Flag
+21. POD_Lag_Days
+
+This schema is optimized for downstream analytics in Microsoft Access and Power BI while remaining faithful to the original source data.
