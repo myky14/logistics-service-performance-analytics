@@ -48,3 +48,10 @@ Business terminology was standardized for an express logistics scenario so the f
 - The dataset originally belongs to a healthcare supply chain domain.
 - Some `POD_Lag_Days` values are negative or unusually large and were intentionally preserved because they originate from the source data.
 - Weight and shipment cost are only available for approximately 60% of shipments.
+
+## Phase 2 Summary
+
+- Four analytical tables were generated: `SLA_Targets`, `Checkpoints`, `Incidents`, and `CSI_Scores`.
+- Synthetic data follows deterministic business rules.
+- No random functions are used.
+- All generated datasets remain refreshable through Power Query.
