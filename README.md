@@ -6,7 +6,7 @@ This project uses a public supply chain dataset as the analytical foundation and
 
 ## Project Status
 
-Business Case, Data Preparation, Analytical Data Model, and Microsoft Access relational database phases completed. SQL investigation and Power BI dashboard development are next.
+Business Case, Data Preparation, Analytical Data Model, Microsoft Access relational database, SQL Investigation, and SQL query validation phases completed. Power BI dashboard design is created; dashboard build and final recommendations are next.
 
 ## Project Workflow
 
@@ -43,6 +43,11 @@ Included documents:
 - [SQL Investigation Framework](docs/sql-investigation/00-sql-investigation-framework.md)
 - [SQL Query Plan](docs/sql-investigation/01-sql-query-plan.md)
 - [SQL Implementation Plan](docs/sql-investigation/02-sql-implementation-plan.md)
+- [SQL Validation Report](docs/sql-investigation/03-sql-validation-report.md)
+
+## Power BI
+
+- [Power BI Dashboard Design](docs/power-bi/04-powerbi-design.md)
 
 ## Methodology
 

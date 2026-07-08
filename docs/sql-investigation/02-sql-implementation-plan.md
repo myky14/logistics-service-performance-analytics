@@ -6,6 +6,8 @@ This document turns the approved SQL Query Plan into an implementation roadmap f
 
 SQL implementation should follow the business questions, not the other way around. Each query should exist because it supports a specific analytical question, visual, or business decision.
 
+Implementation has been completed and validated in [03-sql-validation-report.md](03-sql-validation-report.md).
+
 ## 2. Implementation Principles
 
 - Business question first, SQL second.

@@ -55,3 +55,8 @@ Business terminology was standardized for an express logistics scenario so the f
 - Synthetic data follows deterministic business rules.
 - No random functions are used.
 - All generated datasets remain refreshable through Power Query.
+
+## SQL Validation Note
+
+- During SQL validation, checkpoint timestamp sequence issues were detected and corrected at the Power Query generation layer.
+- Final checkpoint records follow `Origin Scan <= Gateway Scan <= Destination Scan`.

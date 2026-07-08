@@ -108,6 +108,8 @@ This relationship uses `Service_Level` + `Destination_Region`. Each SLA target c
 - `tbl_CSI_Scores`: exactly one score per shipment.
 - `tbl_SLA_Targets`: no duplicate `Service_Level` + `Destination_Region` combinations.
 
+`tbl_Checkpoints` was validated after regeneration and is intended to support checkpoint segment duration analysis, not artificial checkpoint SLA compliance.
+
 ## Design Decisions
 
 SLA targets are stored as a lookup table so service expectations can be managed separately from shipment records. This avoids repeating target values across the shipment table and supports cleaner reporting by service level and region.
