@@ -205,15 +205,15 @@ The analysis should identify which incident categories are most frequently assoc
 
 Prioritize root-cause action plans for recurring issue buckets with the strongest connection to delay exposure.
 
-## 5. Which origin facilities or regions should be prioritized for corrective action?
+## 5. Which origin groups or regions should be prioritized for corrective action?
 
 ### Business Question
 
-Which origin facilities or regions should be prioritized for corrective action?
+Which origin groups or regions should be prioritized for corrective action?
 
 ### Business Hypothesis
 
-Certain origin facilities or regions may require prioritized corrective action.
+Certain origin groups or regions may require prioritized corrective action.
 
 ### Why This Question Matters
 
@@ -227,19 +227,19 @@ Corrective action should focus on operational areas with both service quality ri
 
 ### SQL Investigation Strategy
 
-Compare delay rates, incident patterns, and checkpoint compliance by origin facility and destination region. Look for segments that combine high delay exposure with operational exception patterns.
+Compare delay rates, incident patterns, and checkpoint transition performance by origin group and destination region. Look for segments that combine high delay exposure with operational exception patterns.
 
 `Origin_Facility` is used as a proxy field derived from the source dataset vendor field. It should be interpreted as an analytical grouping dimension, not as a confirmed real logistics facility.
 
 ### Key Metrics / Output Fields
 
-- Origin facility
+- Origin group
 - Destination region
 - Shipment count
 - Delay rate
 - Average delay days
 - Incident count
-- Checkpoint compliance rate
+- Checkpoint duration patterns
 
 ### Expected Power BI Visualization
 
@@ -249,7 +249,7 @@ Compare delay rates, incident patterns, and checkpoint compliance by origin faci
 
 ### Expected Business Insight
 
-The analysis should identify the facilities or regions that deserve management attention before broader network changes are considered.
+The analysis should identify the origin groups or regions that deserve management attention before broader network changes are considered.
 
 ### Potential Business Recommendation
 
