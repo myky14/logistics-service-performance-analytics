@@ -42,6 +42,7 @@ Included documents:
 
 - [SQL Investigation Framework](docs/sql-investigation/00-sql-investigation-framework.md)
 - [SQL Query Plan](docs/sql-investigation/01-sql-query-plan.md)
+- [SQL Implementation Plan](docs/sql-investigation/02-sql-implementation-plan.md)
 
 ## Methodology
 
@@ -73,5 +74,6 @@ docs/
 │   └── 04-analysis-plan.md
 └── sql-investigation/
     ├── 00-sql-investigation-framework.md
-    └── 01-sql-query-plan.md
+    ├── 01-sql-query-plan.md
+    └── 02-sql-implementation-plan.md
 ```
