@@ -12,18 +12,12 @@ Business Case, Data Preparation, Analytical Data Model, Microsoft Access relatio
 
 ```text
 Business Case
-↓
-Data Preparation (Excel + Power Query)
-↓
-Analytical Data Model
-↓
-Microsoft Access Relational Database
-↓
-SQL Investigation
-↓
-Power BI Dashboard
-↓
-Business Recommendations
+-> Data Preparation (Excel + Power Query)
+-> Analytical Data Model
+-> Microsoft Access Relational Database
+-> SQL Investigation
+-> Power BI Dashboard
+-> Business Recommendations
 ```
 
 ## Business Case
@@ -48,16 +42,17 @@ Included documents:
 ## Power BI
 
 - [Power BI Dashboard Design](docs/power-bi/04-powerbi-design.md)
+- [Power BI Dashboard Build Specification](docs/power-bi/05-dashboard-build-spec.md)
 
 ## Methodology
 
 ```text
 Business Understanding
-→ Data Cleaning
-→ Data Modeling
-→ SQL Investigation
-→ Visualization
-→ Business Recommendations
+-> Data Cleaning
+-> Data Modeling
+-> SQL Investigation
+-> Visualization
+-> Business Recommendations
 ```
 
 ## Tools
@@ -71,14 +66,18 @@ Business Understanding
 
 ```text
 docs/
-├── business-case/
-│   ├── 00-executive-brief.md
-│   ├── 01-business-understanding.md
-│   ├── 02-problem-framing.md
-│   ├── 03-logic-tree.md
-│   └── 04-analysis-plan.md
-└── sql-investigation/
-    ├── 00-sql-investigation-framework.md
-    ├── 01-sql-query-plan.md
-    └── 02-sql-implementation-plan.md
+|-- business-case/
+|   |-- 00-executive-brief.md
+|   |-- 01-business-understanding.md
+|   |-- 02-problem-framing.md
+|   |-- 03-logic-tree.md
+|   `-- 04-analysis-plan.md
+|-- sql-investigation/
+|   |-- 00-sql-investigation-framework.md
+|   |-- 01-sql-query-plan.md
+|   |-- 02-sql-implementation-plan.md
+|   `-- 03-sql-validation-report.md
+`-- power-bi/
+    |-- 04-powerbi-design.md
+    `-- 05-dashboard-build-spec.md
 ```

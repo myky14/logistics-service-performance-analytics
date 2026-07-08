@@ -4,6 +4,8 @@
 
 This document defines the dashboard design before visuals are built in Power BI. It connects validated SQL outputs to business questions, dashboard pages, and expected decision support.
 
+For build-level layout, visual IDs, formatting, and QA steps, see [05-dashboard-build-spec.md](05-dashboard-build-spec.md).
+
 ## 2. Dashboard Objective
 
 The dashboard should help operations stakeholders monitor performance, identify delay hotspots, diagnose bottlenecks and root causes, understand customer impact, review cost visibility, and prioritize corrective actions.
