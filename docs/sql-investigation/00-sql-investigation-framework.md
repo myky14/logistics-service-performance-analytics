@@ -1,8 +1,8 @@
 # SQL Investigation Framework
 
-This document defines how SQL will be used as an investigation tool for the Service Quality Analytics case study. Each query created later should answer a specific business question, support a Power BI visual, and provide evidence for a potential business recommendation.
+This document defines how SQL is used as an investigation tool for the Service Quality Analytics case study. Each implemented query answers a specific business question, supports a Power BI visual, and provides evidence for a potential business recommendation.
 
-The framework avoids final conclusions until the SQL investigation and dashboard evidence are completed.
+The framework avoids causal claims and keeps final interpretation tied to validated SQL investigation and dashboard evidence.
 
 ## Simulation & Interpretation Note
 

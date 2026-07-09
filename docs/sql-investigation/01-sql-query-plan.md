@@ -1,8 +1,8 @@
 # SQL Query Plan
 
-This document bridges the approved SQL Investigation Framework and the future Microsoft Access SQL implementation. It translates each business question into a planned query with a clear purpose, expected output, and intended Power BI use.
+This document bridges the approved SQL Investigation Framework and the completed Microsoft Access SQL implementation. It translates each business question into an implemented query reference with a clear purpose, expected output, and Power BI use.
 
-Actual query syntax will be written in the next step. This plan does not include SQL code.
+Actual query syntax is maintained in the SQL implementation artifacts and Microsoft Access database.
 
 ## 1. What is the overall shipment performance?
 
@@ -38,7 +38,7 @@ Join `tbl_Shipments` to `tbl_SLA_Targets` using `Service_Level` and `Destination
 - Overall Network
 - Delivery Month (for trend reporting)
 
-### Planned Output Fields
+### Output Fields
 
 - Delivery month
 - Total shipments
@@ -101,7 +101,7 @@ Join `tbl_Shipments` to `tbl_SLA_Targets` using `Service_Level` and `Destination
 - `Service_Level`
 - `Destination_Region`
 
-### Planned Output Fields
+### Output Fields
 
 - Delivery month
 - Service level
@@ -162,7 +162,7 @@ Join checkpoint records to shipments using `Shipment_ID`. Use a pivot-style aggr
 
 Shipment level.
 
-### Planned Output Fields
+### Output Fields
 
 - Shipment_ID
 - Service_Level
@@ -219,7 +219,7 @@ Use `qry_03a_checkpoint_segment_staging` as the input query. No additional table
 - `On_Time_Flag`
 - Checkpoint transition segment
 
-### Planned Output Fields
+### Output Fields
 
 - Service_Level
 - Destination_Region
@@ -277,7 +277,7 @@ Join incidents to shipments using `Shipment_ID`.
 
 - Issue bucket
 
-### Planned Output Fields
+### Output Fields
 
 - Issue bucket
 - Incident count
@@ -336,7 +336,7 @@ Join incidents and checkpoint summaries to shipments using `Shipment_ID`. This q
 - `Origin_Facility`
 - `Destination_Region`
 
-### Planned Output Fields
+### Output Fields
 
 - Origin group
 - Destination region
@@ -389,7 +389,7 @@ Join CSI records to shipments using `Shipment_ID`.
 ### Filters / Conditions
 
 - Include shipments with valid CSI scores.
-- Assign shipments into planned delay bands:
+- Assign shipments into delay bands:
   - On time / early
   - 1-3 days late
   - 4-7 days late
@@ -399,7 +399,7 @@ Join CSI records to shipments using `Shipment_ID`.
 
 - Delay band
 
-### Planned Output Fields
+### Output Fields
 
 - Delay band
 - Shipment count
@@ -456,7 +456,7 @@ No join required unless later analysis adds related dimensions.
 
 - `Service_Level`
 
-### Planned Output Fields
+### Output Fields
 
 - Service level
 - Shipment count
@@ -516,7 +516,7 @@ No join required.
 - `Service_Level`
 - `Destination_Region`
 
-### Planned Output Fields
+### Output Fields
 
 - Service level
 - Destination region

@@ -16,6 +16,12 @@ The analytical model contains five tables:
 - `tbl_Incidents`: Shipment-level exception table used to analyze service failures and operational root causes.
 - `tbl_CSI_Scores`: Shipment-level customer satisfaction table used to connect delivery performance with customer experience.
 
+The same relational structure is implemented in Microsoft Access and carried into the Power BI semantic model for final reporting.
+
+![Access Relationships](../screenshots/access-relationship-diagram.png)
+
+![Power BI Data Model](../screenshots/pbi-data-model.png)
+
 ## ER Diagram
 
 ```mermaid
@@ -122,12 +128,13 @@ The gateway checkpoint is intentionally modeled as the primary operational bottl
 
 Customer satisfaction scores decrease consistently with transit delay so the model reflects a clear business relationship between delivery performance and customer experience.
 
-## Future Usage
+## Final Usage
 
-This data model is designed for:
+This data model supports the completed implementation:
 
 - Microsoft Access relationships
 - Power BI star-schema style reporting
 - KPI calculation
 - Root cause analysis
 - Customer satisfaction analysis
+- Executive dashboard reporting

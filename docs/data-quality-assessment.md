@@ -8,7 +8,9 @@
 
 ## Data Profiling Summary
 
-The dataset was profiled in Power Query before any transformation was applied.
+The dataset was profiled in Power Query before transformation and dashboard modeling.
+
+![Power Query ETL](../screenshots/powerquery-etl.png)
 
 Key findings:
 
@@ -60,3 +62,9 @@ Business terminology was standardized for an express logistics scenario so the f
 
 - During SQL validation, checkpoint timestamp sequence issues were detected and corrected at the Power Query generation layer.
 - Final checkpoint records follow `Origin Scan <= Gateway Scan <= Destination Scan`.
+
+## Dashboard Readiness
+
+- Microsoft Access SQL outputs were validated before use in Power BI.
+- Final dashboard visuals preserve the documented data quality limitations.
+- Cost Capture Rate and Late POD Rate are shown with exception context to avoid overreading partial or unusual records.

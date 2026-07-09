@@ -91,7 +91,7 @@ Building `qry_03a_checkpoint_segment_staging` early reduces late-stage implement
 
 For `qry_03a`, prefer a self-join approach using `Checkpoint_Type` filters for Origin Scan, Gateway Scan, and Destination Scan because it is easier to debug and reuse as a source for `qry_03b` and `qry_05`. Avoid relying on an Access crosstab query unless necessary.
 
-## 6. Planned SQL Artifact Structure
+## 6. SQL Artifact Structure
 
 Documentation stays in:
 
@@ -99,19 +99,19 @@ Documentation stays in:
 docs/sql-investigation/
 ```
 
-Actual SQL query files should be stored separately in:
+Actual SQL query files are stored separately in:
 
 ```text
 sql/
-├── 01-overall-shipment-performance.sql
-├── 02-delay-exposure-by-service-region.sql
-├── 03a-checkpoint-segment-staging.sql
-├── 03b-checkpoint-segment-summary.sql
-├── 04-incident-issue-bucket-summary.sql
-├── 05-corrective-action-priority-segments.sql
-├── 06-csi-by-delay-band.sql
-├── 07-cost-per-move-by-service-level.sql
-└── 08-pod-timeliness-summary.sql
+|-- 01-overall-shipment-performance.sql
+|-- 02-delay-exposure-by-service-region.sql
+|-- 03a-checkpoint-segment-staging.sql
+|-- 03b-checkpoint-segment-summary.sql
+|-- 04-incident-issue-bucket-summary.sql
+|-- 05-corrective-action-priority-segments.sql
+|-- 06-csi-by-delay-band.sql
+|-- 07-cost-per-move-by-service-level.sql
+`-- 08-pod-timeliness-summary.sql
 ```
 
 File numbering does not have to equal build order. Filenames follow business question order, while implementation follows dependency and difficulty.
@@ -143,7 +143,7 @@ Validation examples:
 
 ## 8. Power BI Handoff
 
-The following Access queries are intended as Power BI-ready outputs:
+The following Access queries were used as Power BI-ready outputs:
 
 - `qry_01_overall_shipment_performance` for overview KPI and trend visuals.
 - `qry_02_delay_exposure_by_service_region` for delay exposure matrix / heat map visuals.
@@ -168,6 +168,6 @@ The following will not be done in Access SQL:
 - No causal claims from simulated relationships.
 - Source table schemas are considered frozen after the analytical data model phase; SQL implementation should not change the structure of `tbl_Shipments`, `tbl_SLA_Targets`, `tbl_Checkpoints`, `tbl_Incidents`, or `tbl_CSI_Scores`.
 
-## 10. Next Step
+## 10. Completion Note
 
-The next step is to implement the planned Microsoft Access SQL queries one by one according to the build order, then validate the outputs before connecting to Power BI.
+The Microsoft Access SQL queries have been implemented, validated, and used as source outputs for the final Power BI dashboard.

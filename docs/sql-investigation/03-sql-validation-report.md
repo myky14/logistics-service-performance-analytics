@@ -2,7 +2,9 @@
 
 ## 1. Purpose
 
-This report documents validation performed after SQL implementation and before Power BI dashboard development. It confirms that the Access SQL outputs are reliable enough to support dashboard visuals, interpretation, and later business recommendations.
+This report documents validation performed after SQL implementation and before final Power BI dashboard completion. It confirms that the Access SQL outputs are reliable enough to support dashboard visuals, interpretation, and business recommendations.
+
+![Access SQL Example](../../screenshots/access-sql-query.png)
 
 ## 2. Validation Scope
 
@@ -67,17 +69,13 @@ This was treated as a realistic QA finding: the abnormal result was investigated
 
 ## 7. Power BI Readiness
 
-SQL outputs are now ready to support:
+SQL outputs supported the completed Power BI dashboard:
 
-- Overview performance page
-- Delay exposure analysis
-- Checkpoint bottleneck analysis
-- Incident/root-cause analysis
-- CSI/customer experience analysis
-- Cost per move analysis
-- Data timeliness analysis
-- Corrective action priority view
+- Executive Overview
+- Operational Bottlenecks
+- Root Cause Analysis & Customer Impact
+- Operational Priorities & Data Quality
 
 ## 8. Sign-Off
 
-The SQL investigation layer is validated and ready for Power BI dashboard development.
+The SQL investigation layer is validated and has been used in the final Power BI dashboard implementation.

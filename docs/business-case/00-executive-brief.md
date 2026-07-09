@@ -16,12 +16,16 @@ How can the operations team identify the main drivers of shipment delays and pri
 - Evaluate how delays affect CSI.
 - Recommend corrective actions based on evidence.
 
-## Expected Deliverables
+## Completed Deliverables
 
 - Cleaned shipment dataset.
 - Relational Access database.
 - SQL investigation queries.
 - Power BI dashboard.
 - Business recommendations.
+
+The completed implementation demonstrates an end-to-end analytics workflow: Power Query ETL, Microsoft Access relational modeling and SQL, a Power BI semantic model, measures, and a four-page executive dashboard.
+
+![Power BI Executive Overview](../../screenshots/pbi-page1.png)
 
 This is a simulated analytics case based on a public supply chain dataset reframed for an express logistics scenario. It does not claim to use real courier company data.

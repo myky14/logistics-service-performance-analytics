@@ -2,9 +2,15 @@
 
 ## 1. Purpose
 
-This document translates the Power BI dashboard design into build-level specifications so the dashboard can be implemented consistently in Power BI. It defines page layout, visual placement, source queries, formatting rules, interactions, and QA checks.
+This document records the completed Power BI dashboard build. It defines the final page layout, visual placement, source queries, formatting rules, interactions, and QA checks used in the implemented dashboard.
 
 The build remains SQL-first: Power BI consumes validated Microsoft Access query outputs and avoids unnecessary model complexity.
+
+Final implementation screenshots:
+
+![Power BI Data Model](../../screenshots/pbi-data-model.png)
+
+![Measures Table](../../screenshots/pbi-measures.png)
 
 ## 2. Global Build Rules
 
@@ -72,11 +78,11 @@ V07, V08, V09, and V12 should use the `Delay Rate` measure when aggregating abov
 ## 4. Page Navigation
 
 - Use buttons or text navigation on each page.
-- Navigation order: Executive Overview -> Delay Investigation -> Root Cause & Customer Impact -> Corrective Action & Data Quality.
+- Navigation order: Executive Overview -> Operational Bottlenecks -> Root Cause Analysis & Customer Impact -> Operational Priorities & Data Quality.
 - Place navigation at top-right.
 - Keep page titles at top-left.
 - Navigation buttons: X=980, Y=16, W=360, H=32.
-- Use text buttons: Executive | Investigation | Customer Impact | Corrective Action.
+- Use text buttons: Executive | Bottlenecks | Root Cause | Priorities.
 - Active page button uses accent yellow underline.
 - Keep navigation consistent across all pages.
 
@@ -104,6 +110,8 @@ Page-specific slicers:
 - Page 4: `Priority_Tier`; optional cost capture status if available.
 
 ## 7. Page 1 - Executive Overview
+
+![Power BI Executive Overview](../../screenshots/pbi-page1.png)
 
 Header:
 
@@ -204,12 +212,14 @@ Footer:
 - Position: X=24, Y=724, W=1318, H=28
 - Text: "Simulated/reframed dataset - see Data Quality notes for limitations."
 
-## 8. Page 2 - Delay Investigation & Network Bottlenecks
+## 8. Page 2 - Operational Bottlenecks
+
+![Operational Bottlenecks](../../screenshots/pbi-page2.png)
 
 Header:
 
 - X=24, Y=16, W=900, H=48
-- Title: "Delay Investigation & Network Bottlenecks"
+- Title: "Operational Bottlenecks"
 - Subtitle: "Where delays concentrate and which checkpoint transition contributes most"
 
 ### V09 Delay Rate Heatmap
@@ -261,12 +271,14 @@ Footer:
 - Position: X=24, Y=724, W=1318, H=28
 - Text: "Simulated/reframed dataset - interpret patterns as analytical model outputs."
 
-## 9. Page 3 - Root Cause & Customer Impact
+## 9. Page 3 - Root Cause Analysis & Customer Impact
+
+![Root Cause Analysis](../../screenshots/pbi-page3.png)
 
 Header:
 
 - X=24, Y=16, W=900, H=48
-- Title: "Root Cause & Customer Impact"
+- Title: "Root Cause Analysis & Customer Impact"
 - Subtitle: "Incident patterns and customer satisfaction impact"
 
 ### V13 Incident Issue Bucket
@@ -321,12 +333,14 @@ Footer:
 - Position: X=24, Y=724, W=1318, H=28
 - Text: "Simulated/reframed dataset - interpret patterns as analytical model outputs."
 
-## 10. Page 4 - Corrective Action & Data Quality
+## 10. Page 4 - Operational Priorities & Data Quality
+
+![Operational Priorities](../../screenshots/pbi-page4.png)
 
 Header:
 
 - X=24, Y=16, W=900, H=48
-- Title: "Corrective Action & Data Quality"
+- Title: "Operational Priorities & Data Quality"
 - Subtitle: "Prioritization evidence, cost visibility and reporting quality"
 
 ### V17 POD Timeliness
@@ -437,30 +451,30 @@ Optional drill-through:
 
 ## 15. Build Checklist
 
-- [ ] Set canvas size and background.
-- [ ] Create page navigation.
-- [ ] Add card containers.
-- [ ] Add visuals by Visual ID order.
-- [ ] Apply formatting.
-- [ ] Validate totals.
-- [ ] Check sorting.
-- [ ] Check low-volume interpretation.
-- [ ] Add limitation notes.
-- [ ] Export screenshots for portfolio.
+- [x] Set canvas size and background.
+- [x] Create page navigation.
+- [x] Add card containers.
+- [x] Add visuals by Visual ID order.
+- [x] Apply formatting.
+- [x] Validate totals.
+- [x] Check sorting.
+- [x] Check low-volume interpretation.
+- [x] Add limitation notes.
+- [x] Export screenshots for portfolio.
 
 ## 16. QA Checklist
 
-- [ ] Total shipments match Access.
-- [ ] On-Time Rate matches `qry_01`.
-- [ ] Delay Rate visuals match `qry_02`.
-- [ ] Checkpoint durations are non-negative.
-- [ ] Incident shares match `qry_04`.
-- [ ] CSI scale shown as 0-100.
-- [ ] Cost metrics show capture-rate context.
-- [ ] POD exceptions visible.
-- [ ] Blank `Destination_Region` explained as unclassified.
-- [ ] No visual makes causal claims.
+- [x] Total shipments match Access.
+- [x] On-Time Rate matches `qry_01`.
+- [x] Delay Rate visuals match `qry_02`.
+- [x] Checkpoint durations are non-negative.
+- [x] Incident shares match `qry_04`.
+- [x] CSI scale shown as 0-100.
+- [x] Cost metrics show capture-rate context.
+- [x] POD exceptions visible.
+- [x] Blank `Destination_Region` explained as unclassified.
+- [x] No visual makes causal claims.
 
-## 17. Next Step
+## 17. Completion Note
 
-The next step is to build Page 1 first, validate it against Access outputs, then move page by page.
+The four-page Power BI dashboard has been completed and validated against the Microsoft Access SQL outputs. The final report includes Executive Overview, Operational Bottlenecks, Root Cause Analysis & Customer Impact, and Operational Priorities & Data Quality pages.

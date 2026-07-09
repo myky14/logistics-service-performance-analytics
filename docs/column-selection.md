@@ -50,7 +50,7 @@ Business-driven feature selection keeps the final dataset focused on fields that
 
 ## Final Shipments Table
 
-The final `Shipments` table will keep the following fields:
+The final `Shipments` table keeps the following fields:
 
 1. Shipment_ID
 2. Destination_Country
@@ -78,7 +78,7 @@ The final `Shipments` table will keep the following fields:
 
 - Raw data must not be edited directly.
 - Removed columns are excluded because they are procurement-specific, health-product-specific, or not relevant to service quality analytics.
-- Weight and freight cost contain text placeholders, so numeric values will be converted while invalid placeholders remain null.
+- Weight and freight cost contain text placeholders, so numeric values were converted while invalid placeholders remain null.
 - This project does not claim to use real DHL or courier operational data.
 
 ## Phase 1 Result

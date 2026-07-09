@@ -2,13 +2,19 @@
 
 ## 1. Purpose
 
-This document defines the dashboard design before visuals are built in Power BI. It connects validated SQL outputs to business questions, dashboard pages, and expected decision support.
+This document summarizes the final Power BI dashboard design. It connects validated SQL outputs to business questions, implemented dashboard pages, and expected decision support.
 
 For build-level layout, visual IDs, formatting, and QA steps, see [05-dashboard-build-spec.md](05-dashboard-build-spec.md).
 
 ## 2. Dashboard Objective
 
-The dashboard should help operations stakeholders monitor performance, identify delay hotspots, diagnose bottlenecks and root causes, understand customer impact, review cost visibility, and prioritize corrective actions.
+The dashboard helps operations stakeholders monitor performance, identify delay hotspots, diagnose bottlenecks and root causes, understand customer impact, review cost visibility, and prioritize corrective actions.
+
+The completed solution includes Power Query ETL, Microsoft Access SQL, a relational database, a Power BI semantic model, a measures table, and the final executive dashboard.
+
+![Power Query ETL](../../screenshots/powerquery-etl.png)
+
+![Power BI Data Model](../../screenshots/pbi-data-model.png)
 
 ## 3. Dashboard Pages
 
@@ -18,13 +24,15 @@ Purpose:
 
 Give a high-level service quality baseline.
 
-Suggested visuals:
+Implemented visuals:
 
-- KPI cards: Total Shipments, On-Time Rate, Delay Rate, Avg Transit Delay, Avg CSI Score (0-100), Avg POD Lag
+- KPI cards: Total Shipments, On-Time Rate, Delayed Shipments, Avg CSI Score (0-100), Cost Capture Rate
 - Trend chart by `Delivery_Month`
-- Service level performance summary
-- Region performance summary
+- Delay Rate by `Service_Level`
+- Delay Rate by `Destination_Region`
 - Footer note: "Simulated/reframed dataset - see Data Quality notes for limitations."
+
+![Power BI Executive Overview](../../screenshots/pbi-page1.png)
 
 Source queries:
 
@@ -38,18 +46,19 @@ Business questions supported:
 - What is the overall shipment performance?
 - Which service levels or regions have the highest delay exposure?
 
-### Page 2 - Delay & Operational Bottlenecks
+### Page 2 - Operational Bottlenecks
 
 Purpose:
 
 Identify where delays concentrate and which checkpoint transition contributes most.
 
-Suggested visuals:
+Implemented visuals:
 
 - Heat map: `Service_Level` x `Destination_Region` delay rate
 - Segment duration comparison: Origin-to-Gateway vs Gateway-to-Destination
-- Bottleneck ranking by service level/region
 - Table of high-volume delayed segments
+
+![Operational Bottlenecks](../../screenshots/pbi-page2.png)
 
 Source queries:
 
@@ -62,17 +71,20 @@ Business questions supported:
 - Which service levels or regions have the highest delay exposure?
 - Which operational checkpoint contributes most to shipment delay?
 
-### Page 3 - Root Cause & Customer Impact
+### Page 3 - Root Cause Analysis & Customer Impact
 
 Purpose:
 
 Connect incident patterns with customer satisfaction impact.
 
-Suggested visuals:
+Implemented visuals:
 
 - Ranked bar chart: incident count by issue bucket
-- Severity chart: average delay days by issue bucket
 - Column chart: Avg CSI Score (0-100) by Delay Band
+- Customer impact narrative
+- Key findings cards
+
+![Root Cause Analysis](../../screenshots/pbi-page3.png)
 
 Source queries:
 
@@ -84,18 +96,17 @@ Business questions supported:
 - What are the most common incident issue buckets?
 - How does transit delay affect CSI score?
 
-### Page 4 - Corrective Action & Data Quality
+### Page 4 - Operational Priorities & Data Quality
 
 Purpose:
 
 Prioritize follow-up segments and monitor data timeliness/cost visibility.
 
-Suggested visuals:
+Implemented visuals:
 
-- POD timeliness by service level/region
-- Negative / high POD lag exception cards or table
+- Late POD Rate by service level
+- Negative / high POD lag exception cards
 - Cost per move by service level
-- Cost capture rate by service level
 - Corrective action priority table using `qry_05`
 - Notes card for data limitations:
   - blank `Destination_Region` retained and treated as unclassified
@@ -105,6 +116,8 @@ Suggested visuals:
   - simulated model, no causal claims
 
 Avg POD Lag should be paired with exception visibility because an average can hide unusual negative or high values.
+
+![Operational Priorities](../../screenshots/pbi-page4.png)
 
 Source queries:
 
@@ -157,31 +170,33 @@ Business questions supported:
 
 ## 7. Navigation
 
-Use page navigation buttons or a simple guided flow:
+Use page navigation buttons in this guided flow:
 
 ```text
-Overview -> Bottlenecks -> Root Cause & Customer Impact -> Corrective Action & Data Quality
+Executive Overview -> Operational Bottlenecks -> Root Cause Analysis & Customer Impact -> Operational Priorities & Data Quality
 ```
 
 ## 8. Power BI Build Sequence
 
-1. Connect to Access queries.
-2. Validate totals against Access.
-3. Create model relationships if needed.
-4. Build measures.
-5. Build Page 1 overview.
-6. Build Page 2 bottleneck view.
-7. Build Page 3 root cause/customer view.
-8. Build Page 4 corrective action/data quality view.
-9. Cross-check dashboard totals.
-10. Prepare final screenshots and insights.
+Completed build sequence:
+
+1. Connected to Access queries.
+2. Validated totals against Access.
+3. Created the Power BI semantic model.
+4. Built measures.
+5. Built Page 1 Executive Overview.
+6. Built Page 2 Operational Bottlenecks.
+7. Built Page 3 Root Cause Analysis & Customer Impact.
+8. Built Page 4 Operational Priorities & Data Quality.
+9. Cross-checked dashboard totals.
+10. Prepared final screenshots and insights.
 
 ## 9. Expected Business Story
 
-The dashboard should tell a clear story:
+The final dashboard tells a clear story:
 
 ```text
-Overview -> Delay Hotspots -> Operational Bottlenecks -> Root Causes -> Customer Impact -> Cost/Data Timeliness -> Corrective Action
+Executive Overview -> Delay Hotspots -> Operational Bottlenecks -> Root Cause Analysis -> Customer Impact -> Cost/Data Timeliness -> Operational Priorities
 ```
 
 ## 10. Limitations to Display or Document
